@@ -34,6 +34,25 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="GDScript" id="GDScript_j5wjh"]
+script/source = "extends Node
+
+signal button_pressed
+
+var actively_pressed_keys: Array = []
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if not event.is_pressed():
+		if actively_pressed_keys.has(event.keycode):
+			actively_pressed_keys.remove_at(actively_pressed_keys.find(event.keycode))
+			return
+	else:
+		if actively_pressed_keys.has(event.keycode):
+			return
+		button_pressed.emit()
+		actively_pressed_keys.append(event.keycode)
+"
+
 [node name="Game" type="Control" unique_id=895024325]
 layout_mode = 3
 anchors_preset = 15
@@ -183,6 +202,7 @@ layout_mode = 1
 
 [node name="TeamPopup" type="Control" parent="." unique_id=815887057]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -217,6 +237,11 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
+[node name="ButtonPressManager" type="Node" parent="." unique_id=1851043057]
+process_mode = 3
+script = SubResource("GDScript_j5wjh")
+
 [connection signal="pressed" from="GameOver/ReplayButton" to="." method="restart"]
 [connection signal="pressed" from="SettingsButton" to="." method="open_settings"]
 [connection signal="setting_changed" from="Settings" to="." method="setting_changed"]
+[connection signal="button_pressed" from="ButtonPressManager" to="." method="press_button"]

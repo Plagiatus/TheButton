@@ -118,6 +118,7 @@ layout_mode = 2
 alignment = 1
 suffix = "h"
 custom_arrow_step = 1.0
+select_all_on_focus = true
 
 [node name="Minutes" type="SpinBox" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer3" unique_id=793760542]
 unique_name_in_owner = true
@@ -126,6 +127,7 @@ max_value = 59.0
 rounded = true
 alignment = 1
 suffix = "m"
+select_all_on_focus = true
 
 [node name="Seconds" type="SpinBox" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer3" unique_id=1703261221]
 unique_name_in_owner = true
@@ -135,6 +137,7 @@ value = 10.0
 rounded = true
 alignment = 1
 suffix = "s"
+select_all_on_focus = true
 
 [node name="Right" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer" unique_id=414227779]
 visible = false

@@ -55,6 +55,7 @@ func setup_colors():
 		section.min_time = time_per_weight * current_weight
 		current_weight += weights[i]
 		section.max_time = time_per_weight * current_weight
+		section.show_progress = settings.show_progress
 		sections.append(section)
 
 func _process(delta: float) -> void:
@@ -64,32 +65,21 @@ func _process(delta: float) -> void:
 	if current_time < 0:
 		game_over()
 
-var actively_pressed_keys: Array = []
-
-func _unhandled_key_input(event: InputEvent) -> void:
-	if is_game_over: return
-	if not event.is_pressed():
-		if actively_pressed_keys.has(event.keycode):
-			actively_pressed_keys.remove_at(actively_pressed_keys.find(event.keycode))
-			return
-	else:
-		if actively_pressed_keys.has(event.keycode):
-			return
-		if current_time > 0:
-			press_button()
-			actively_pressed_keys.append(event.keycode)
 
 func press_button():
-	get_tree().paused = true
+	if is_game_over: return
 	
-	for section in sections:
-		if section.min_time < current_time and section.max_time > current_time:
-			%TeamPopupColor.color = section.color
-			break
-	%TeamPopup.show()
-	await get_tree().create_timer(3).timeout
-	get_tree().paused = false
-	%TeamPopup.hide()
+	if settings.show_popup:
+		get_tree().paused = true
+		
+		for section in sections:
+			if section.min_time < current_time and section.max_time > current_time:
+				%TeamPopupColor.color = section.color
+				break
+		%TeamPopup.show()
+		await get_tree().create_timer(3).timeout
+		get_tree().paused = false
+		%TeamPopup.hide()
 	reset()
 	amt_button_presses += 1
 
