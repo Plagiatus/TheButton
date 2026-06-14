@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://dkjmkuq6gicio"]
+
+[ext_resource type="Script" uid="uid://kd45ae6v308w" path="res://settings.gd" id="1_cj1lu"]
+[ext_resource type="FontFile" uid="uid://ur71kv2r2gj5" path="res://Ultra-Regular.ttf" id="1_gc0em"]
+[ext_resource type="LabelSettings" uid="uid://behijik2ukij3" path="res://settings_label.tres" id="2_cj1lu"]
+[ext_resource type="Texture2D" uid="uid://b75cg73p2epbl" path="res://assets/close.png" id="3_71mqq"]
+[ext_resource type="Texture2D" uid="uid://bmvplahio22xi" path="res://assets/close_hover.png" id="4_3j6r5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lc2xo"]
+bg_color = Color(0.8745098, 0.8745098, 0.8745098, 0.91764706)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_215e1"]
+font = ExtResource("1_gc0em")
+font_size = 92
+font_color = Color(0, 0, 0, 1)
+
+[node name="Settings" type="Control" unique_id=661512642]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cj1lu")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1939239633]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="PanelContainer" parent="MarginContainer" unique_id=422526637]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lc2xo")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=485379496]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer" unique_id=1535885553]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=226350440]
+layout_mode = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_215e1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsInnerContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=435318793]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Left" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer" unique_id=590065337]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left" unique_id=846676768]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer" unique_id=1159776588]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+text = "Show popup after press"
+label_settings = ExtResource("2_cj1lu")
+
+[node name="ShowPopup" type="CheckButton" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer" unique_id=265071545]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left" unique_id=564258642]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer2" unique_id=1106671816]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+text = "Show progressbars"
+label_settings = ExtResource("2_cj1lu")
+
+[node name="ShowProgress" type="CheckButton" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer2" unique_id=809809439]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left" unique_id=606558644]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer3" unique_id=1181342170]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+text = "Duration"
+label_settings = ExtResource("2_cj1lu")
+
+[node name="Hours" type="SpinBox" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer3" unique_id=891704152]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+suffix = "h"
+custom_arrow_step = 1.0
+
+[node name="Minutes" type="SpinBox" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer3" unique_id=793760542]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 59.0
+rounded = true
+alignment = 1
+suffix = "m"
+
+[node name="Seconds" type="SpinBox" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer3" unique_id=1703261221]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 59.0
+value = 10.0
+rounded = true
+alignment = 1
+suffix = "s"
+
+[node name="Right" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer" unique_id=414227779]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Right" unique_id=957804625]
+layout_mode = 2
+text = "Colors"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Right" unique_id=1333099298]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorSettings" type="GridContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Right/ScrollContainer" unique_id=691615846]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 20
+columns = 3
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Right/ScrollContainer/ColorSettings" unique_id=914800630]
+layout_mode = 2
+text = "Order"
+
+[node name="Label2" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Right/ScrollContainer/ColorSettings" unique_id=407737825]
+layout_mode = 2
+text = "Color"
+
+[node name="Label3" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Right/ScrollContainer/ColorSettings" unique_id=656722388]
+layout_mode = 2
+text = "Weight"
+
+[node name="CloseSettingsButton" type="TextureButton" parent="." unique_id=824558314]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -133.0
+offset_top = 70.0
+offset_right = -58.0
+offset_bottom = 145.0
+grow_horizontal = 0
+tooltip_text = "Close"
+texture_normal = ExtResource("3_71mqq")
+texture_hover = ExtResource("4_3j6r5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="toggled" from="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer/ShowPopup" to="." method="set_setting" binds= ["show_popup"]]
+[connection signal="toggled" from="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer2/ShowProgress" to="." method="set_setting" binds= ["show_progress"]]
+[connection signal="value_changed" from="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer3/Hours" to="." method="set_setting" binds= ["hours"]]
+[connection signal="value_changed" from="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer3/Minutes" to="." method="set_setting" binds= ["minutes"]]
+[connection signal="value_changed" from="MarginContainer/MarginContainer/VBoxContainer/SettingsInnerContainer/Left/HBoxContainer3/Seconds" to="." method="set_setting" binds= ["seconds"]]
+[connection signal="pressed" from="CloseSettingsButton" to="." method="close_settings"]

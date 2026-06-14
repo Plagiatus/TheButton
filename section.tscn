@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bxeq5i2b10bnt"]
+
+[ext_resource type="Script" uid="uid://b7rfd7t0t7cib" path="res://section.gd" id="1_joian"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_feb5d"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc0e3"]
+bg_color = Color(0.7708395, 0.77083945, 0.7708394, 1)
+border_width_left = 5
+border_width_right = 5
+border_color = Color(0.9843137, 0.9843137, 0.9843137, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jktm"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_color = Color(0.9843137, 0.9843137, 0.9843137, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[node name="Section" type="Control" unique_id=432065610]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+script = ExtResource("1_joian")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1660728261]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Progress" type="ProgressBar" parent="VBoxContainer" unique_id=163166288]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_styles/background = SubResource("StyleBoxEmpty_feb5d")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fc0e3")
+value = 50.0
+show_percentage = false
+
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=1157773558]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_7jktm")

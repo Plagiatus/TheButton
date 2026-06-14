@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://behijik2ukij3"]
+
+[ext_resource type="FontFile" uid="uid://ur71kv2r2gj5" path="res://Ultra-Regular.ttf" id="1_ua10h"]
+
+[resource]
+font = ExtResource("1_ua10h")
+font_size = 32
+font_color = Color(0, 0, 0, 1)

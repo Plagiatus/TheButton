@@ -1,0 +1,29 @@
+[gd_resource type="Theme" format=3 uid="uid://benrcrlpcvsk"]
+
+[ext_resource type="Texture2D" uid="uid://bfhr3famok83c" path="res://assets/switch-on.png" id="1_0omi4"]
+[ext_resource type="FontFile" uid="uid://ur71kv2r2gj5" path="res://Ultra-Regular.ttf" id="1_470mv"]
+[ext_resource type="Texture2D" uid="uid://ktd7dnmocukm" path="res://assets/switch-off.png" id="2_58jnp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58jnp"]
+bg_color = Color(0.9843137, 0.9843137, 0.9843137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0omi4"]
+bg_color = Color(0, 0, 0, 1)
+
+[resource]
+CheckButton/icons/checked = ExtResource("1_0omi4")
+CheckButton/icons/unchecked = ExtResource("2_58jnp")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_470mv")
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/constants/minimum_character_width = 3
+LineEdit/font_sizes/font_size = 24
+LineEdit/fonts/font = ExtResource("1_470mv")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_58jnp")
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20
+SpinBox/styles/down_background = SubResource("StyleBoxFlat_0omi4")
+SpinBox/styles/up_background = SubResource("StyleBoxFlat_0omi4")
