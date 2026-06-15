@@ -65,10 +65,10 @@ func _process(delta: float) -> void:
 	if current_time < 0:
 		game_over()
 
-
 func press_button():
 	if is_game_over: return
-	
+	if get_tree().paused: return
+
 	if settings.show_popup:
 		get_tree().paused = true
 		
